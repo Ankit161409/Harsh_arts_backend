@@ -12,7 +12,7 @@ import com.atlas.demo.Repository.*;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://harsh-artz26.onrender.com")
 public class GetController {
 
     @Autowired
