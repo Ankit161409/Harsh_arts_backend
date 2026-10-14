@@ -57,35 +57,16 @@ public class ByIdController {
     // GET WATERCOLOR PAINTING BY ID
     // GET /api/getWatercolorById/{id}
     // =====================================
-//    @GetMapping("/getWatercolorById/{id}")
-//    public ResponseEntity<?> getWatercolorById(@PathVariable String id) {
-//
-//        return watercolorPaintingsRepo.findById(id)
-//                .<ResponseEntity<?>>map(ResponseEntity::ok)
-//                .orElseGet(() -> ResponseEntity
-//                        .status(HttpStatus.NOT_FOUND)
-//                        .body("Watercolor painting not found with id: " + id));
-//    }
-
     @GetMapping("/getWaterColorById/{id}")
-    public ResponseEntity<?> getWatercolorById(
-            @PathVariable("id") String id) {
+    public ResponseEntity<?> getWatercolorById(@PathVariable String id) {
 
-        System.out.println("Requested watercolor ID: [" + id + "]");
-        System.out.println("ID length: " + id.length());
-
-        Optional<WatercolorPaintings> painting =
-                watercolorPaintingsRepo.findById(id);
-
-        if (painting.isPresent()) {
-            System.out.println("Watercolor painting found!");
-            return ResponseEntity.ok(painting.get());
-        }
-
-        System.out.println("Watercolor painting NOT found!");
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Watercolor painting not found with id: " + id);
+        return watercolorPaintingsRepo.findById(id)
+                .<ResponseEntity<?>>map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity
+                        .status(HttpStatus.NOT_FOUND)
+                        .body("Watercolor painting not found with id: " + id));
     }
+
 
 
     // =====================================
