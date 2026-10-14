@@ -67,7 +67,7 @@ public class ByIdController {
 //                        .body("Watercolor painting not found with id: " + id));
 //    }
 
-    @GetMapping("/getWatercolorById/{id}")
+    @GetMapping("/getWaterColorById/{id}")
     public ResponseEntity<?> getWatercolorById(
             @PathVariable("id") String id) {
 
