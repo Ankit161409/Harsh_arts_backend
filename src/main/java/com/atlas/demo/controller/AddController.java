@@ -130,6 +130,12 @@ public class AddController {
         return colouredPencilRepo.save(colouredPencil);
     }
 
+
+    // HEALTH CHECK
+    @GetMapping("/health")
+    public String healthCheck() {
+        return "Backend is running!";
+    }
 }
 
 
